@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import logo from "./logo.svg"
+import "./App.css"
+import List from "./components/List"
+const INITIAL_NUM_ARR = [1, 2, 3, 4, 5]
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [NUM_ARR, setNumArr] = React.useState(INITIAL_NUM_ARR)
+    const [IS_SHOW_LIST, setIsShowList] = React.useState(false)
+    const [SEARCH_VALUE, setSearchValue] = React.useState('')
+    return (
+        <div className="App">
+            <button
+                onClick={() => {
+                    setIsShowList(!IS_SHOW_LIST)
+                }}
+            >
+                IS_SHOW_LIST: {IS_SHOW_LIST ? "true" : "false"}
+            </button>
+            <input
+            value={SEARCH_VALUE}
+            onChange={
+              (event) => {
+                setSearchValue(event.target.value)
+              }
+            }
+            />
+            {IS_SHOW_LIST && <List arr={NUM_ARR} />}
+        </div>
+    )
 }
 
-export default App;
+export default App
