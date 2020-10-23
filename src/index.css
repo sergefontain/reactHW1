@@ -1,13 +1,189 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
+}
+
+ul,
+h1,
+h2,
+h3,
+h4,
+hr,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+ul > li {
+    list-style-type: none;
+}
+
+.App {
+    font-size: 20px;
+    font-family: "Times New Roman", Times, serif;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#header {
+    position: absolute;
+    font-size: 1.6em;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 6px -6px black;
+}
+
+#header .container {
+    padding: 0.4vh;
+}
+
+#main {
+    display: flex;
+    flex-grow: 1;
+    background: -moz-linear-gradient(45deg, #4dd0cd, #ffb2a2);
+}
+#main > .container {
+    position: relative;
+    flex-grow: 1;
+}
+
+#userProfileTab {
+    margin: 24vh auto 0;
+    width: 32%;
+    overflow: hidden;
+    border-radius: 25px;
+    background-color: #8cc9bc;
+    box-shadow: 0px 10px 20px #444;
+}
+
+.modalPic {
+    position: absolute;
+    right: 2vw;
+    bottom: 2vh;
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    background: url(./components/ModalPic/catlogo.png) no-repeat 50% 50% / 100%;
+}
+
+#userProfileTab > .container {
+    margin: 3vh 0;
+}
+
+#userName {
+    margin-bottom: 3vh;
+    font-size: 1.4em;
+    color: #ffffff;
+}
+#userName p {
+    text-align: center;
+}
+
+#userTabSeparator {
+    margin: 0 auto 3vh;
+    width: 25%;
+    height: 3px;
+    border: none;
+    color: #ffffff;
+    background-color: #ffffff;
+}
+
+#userPic {
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    background: url(./components/UserPic/252.png) no-repeat 50% 50% / 100%;
+}
+
+#stats {
+    padding: 2vh 0;
+    display: flex;
+    flex-direction: row;
+    background-color: #ffffff;
+}
+
+#stats li {
+    width: 50%;
+    padding: 0 5px 0px;
+}
+
+#stats li > .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#stats li:first-child {
+    box-shadow: 1px 0px 0px#BFBFBF;
+}
+#stats li:last-child {
+    box-shadow: -1px 0px 0px #bfbfbf;
+}
+
+#footer {
+    padding: 1vh;
+    display: flex;
+    flex-direction: row;
+}
+
+#footer .leftSide {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#footer .rightSide {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+}
+
+#footer .rightSide #emptySlot,
+#footer .rightSide #contacts {
+    width: 50%;
+}
+#footer .rightSide #contacts {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+#footer .leftSide #info span:first-child {
+    padding-left: 20px;
+}
+
+#footer .leftSide #info span:last-child {
+    padding-left: 5px;
+}
+
+#footer .leftSide #footerPic {
+    width: 88px;
+    height: 24px;
+    background: url(./components/Footer/310.png) no-repeat 50% 50% / 100%;
 }
